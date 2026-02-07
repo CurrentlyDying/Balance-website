@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your App</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 to-black text-white">
+
+<main class="min-h-screen flex items-center justify-center px-6">
+  <div class="max-w-xl text-center">
+
+    <h1 class="text-5xl font-bold mb-4">
+      Your App Name
+    </h1>
+
+    <p class="text-gray-300 mb-8">
+      A short, confident one-liner about what your app does and why it matters.
+    </p>
+
+    <form id="signupForm" class="flex gap-2 flex-col sm:flex-row">
+      <input
+              type="email"
+              required
+              placeholder="you@example.com"
+              class="flex-1 px-4 py-3 rounded text-black"
+      />
+
+      <button
+              type="submit"
+              class="px-6 py-3 rounded bg-blue-600 hover:bg-blue-700 transition"
+      >
+        Join Waitlist
+      </button>
+    </form>
+
+    <p id="status" class="mt-4 text-green-400 hidden">
+      You’re on the list.
+    </p>
+
+  </div>
+</main>
+
+<script>
+  const form = document.getElementById('signupForm');
+  const status = document.getElementById('status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = form.querySelector('input').value;
+
+    const res = await fetch('/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+
+    if (res.ok) {
+      form.reset();
+      status.classList.remove('hidden');
+    }
+  });
+</script>
+
+</body>
+</html>
