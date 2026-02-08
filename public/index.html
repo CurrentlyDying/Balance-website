@@ -2,68 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your App</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balance, An AI Alcohol tracker</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
 
-<body class="bg-gradient-to-br from-gray-900 to-black text-white">
+<header class="hero">
+  <h1>Balance, An AI Alcohol tracker</h1>
+  <p>Track smarter. Build better habits. Stay in control.</p>
 
-<main class="min-h-screen flex items-center justify-center px-6">
-  <div class="max-w-xl text-center">
+  <form id="signup-form">
+    <input type="email" id="email" placeholder="Enter your email" required />
+    <button type="submit">Get Early Access</button>
+  </form>
 
-    <h1 class="text-5xl font-bold mb-4">
-      Your App Name
-    </h1>
+  <span class="note">No spam. Ever.</span>
+</header>
 
-    <p class="text-gray-300 mb-8">
-      A short, confident one-liner about what your app does and why it matters.
-    </p>
-
-    <form id="signupForm" class="flex gap-2 flex-col sm:flex-row">
-      <input
-              type="email"
-              required
-              placeholder="you@example.com"
-              class="flex-1 px-4 py-3 rounded text-black"
-      />
-
-      <button
-              type="submit"
-              class="px-6 py-3 rounded bg-blue-600 hover:bg-blue-700 transition"
-      >
-        Join Waitlist
-      </button>
-    </form>
-
-    <p id="status" class="mt-4 text-green-400 hidden">
-      You’re on the list.
-    </p>
-
+<section class="features">
+  <div>
+    <h3>📊 Insightful Tracking</h3>
+    <p>Understand your habits with clean, meaningful data.</p>
   </div>
-</main>
+  <div>
+    <h3>🔒 Private by Design</h3>
+    <p>Your data stays yours. No ads. No selling.</p>
+  </div>
+  <div>
+    <h3>⚡ Built for Speed</h3>
+    <p>Fast, lightweight, and distraction-free.</p>
+  </div>
+</section>
 
-<script>
-  const form = document.getElementById('signupForm');
-  const status = document.getElementById('status');
+<footer>
+  <p>© 2026 Your App Name</p>
+  <p class="footer-sub">Built quietly. Built right.</p>
+</footer>
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = form.querySelector('input').value;
-
-    const res = await fetch('/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    });
-
-    if (res.ok) {
-      form.reset();
-      status.classList.remove('hidden');
-    }
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
