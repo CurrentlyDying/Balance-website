@@ -1,3 +1,15 @@
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.classList.add('fade-out');
+
+        setTimeout(() => {
+            loader.remove();
+        }, 500);
+    }, 2000);
+});
+
+
 const form = document.getElementById('signup-form');
 
 form.addEventListener('submit', async (e) => {

@@ -3,40 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Balance, An AI Alcohol tracker</title>
+  <title>Balance — An AI Alcohol Tracker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="pulse"></div>
+    <span>Initializing…</span>
+  </div>
+</div>
+
+<!-- Hero Section -->
 <header class="hero">
-  <h1>Balance, An AI Alcohol tracker</h1>
-  <p>Track smarter. Build better habits. Stay in control.</p>
+  <h1>Balance</h1>
+  <p class="subtitle">An AI-powered alcohol tracker</p>
 
   <form id="signup-form">
-    <input type="email" id="email" placeholder="Enter your email" required />
-    <button type="submit">Get Early Access</button>
+    <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+    />
+    <button type="submit">Join the Waitlist</button>
   </form>
 
   <span class="note">No spam. Ever.</span>
 </header>
 
+<!-- Features -->
 <section class="features">
   <div>
     <h3>📊 Insightful Tracking</h3>
     <p>Understand your habits with clean, meaningful data.</p>
   </div>
+
   <div>
     <h3>🔒 Private by Design</h3>
     <p>Your data stays yours. No ads. No selling.</p>
   </div>
+
   <div>
     <h3>⚡ Built for Speed</h3>
     <p>Fast, lightweight, and distraction-free.</p>
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
-  <p>© 2026 Your App Name</p>
+  <p>© 2026 Balance</p>
   <p class="footer-sub">Built quietly. Built right.</p>
 </footer>
 
